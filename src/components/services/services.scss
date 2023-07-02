@@ -1,0 +1,247 @@
+@import "../../global.scss";
+.services {
+  background-color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 70px;
+
+  h3 {
+    text-align: center;
+    color: black;
+    font-size: 26px;
+    font-family: $roboto;
+    font-weight: 700;
+  }
+
+  .servicesWrapper {
+    width: 90%;
+    height: 90vh;
+
+    .ul {
+      display: flex;
+      width: 450px;
+      justify-content: space-between;
+      align-items: center;
+      margin: auto;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .container1 {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.6rem;
+    transition: all 1s ease-in-out;
+    margin-top: 2rem;
+    width: 100%;
+
+    @include mobile {
+      display: flex;
+      flex-flow: column nowrap;
+    }
+    .serviceContainer {
+      width: 380px;
+      height: 500px;
+      border-radius: 8px;
+      border: 1px solid blue;
+      margin-right: 12px;
+      overflow: hidden;
+      transition: all 500ms ease-in-out;
+
+      &:hover {
+        transform: scale(1.037);
+      }
+
+      @include mobile {
+        width: 99%;
+
+        &:hover {
+          transform: scale(0.97);
+        }
+      }
+
+      .itemContainer {
+        width: 380px;
+        height: 500px;
+        border-radius: 8px;
+        transition: all 500ms ease-in-out;
+        overflow: hidden;
+
+        @include mobile {
+          width: 100%;
+        }
+
+        .item {
+          width: 380px;
+          height: 500px;
+          background-color: white;
+          border-radius: 8px;
+          transition: all 500ms ease-in-out;
+          overflow: hidden;
+          position: relative;
+
+          @include mobile {
+            width: 100%;
+          }
+
+          .sec1 {
+            height: 100px;
+            background-color: orange;
+            padding: 6px 0 6px 0;
+            position: relative;
+
+            h4 {
+              font-size: 25px;
+              text-align: center;
+              color: white;
+            }
+
+            p {
+              color: blue;
+              text-align: center;
+            }
+
+            .basic {
+              width: 120px;
+              height: 23px;
+              background-color: red;
+              transform: rotate(-45deg);
+              position: absolute;
+              top: 15px;
+              left: -27px;
+
+              .besic {
+                color: white;
+                font-weight: 600;
+                font-size: 20px;
+              }
+            }
+
+            &.medium {
+              width: 120px;
+              height: 23px;
+              background-color: red;
+              transform: rotate(-45deg);
+              position: absolute;
+              top: 15px;
+              left: -27px;
+            }
+
+            &.premium {
+              width: 120px;
+              height: 23px;
+              background-color: red;
+              transform: rotate(-45deg);
+              position: absolute;
+              top: 15px;
+              right: -27px;
+            }
+          }
+
+          .sec2 {
+            margin-top: auto;
+
+            .sec2-ksh {
+              text-align: center;
+              font-weight: 700;
+              position: relative;
+              width: 180px;
+              height: 40px;
+              margin: 4px auto;
+
+              .ksh {
+                position: absolute;
+                top: 4px;
+                left: 6px;
+              }
+
+              .price {
+                font-size: 30px;
+                color: rgb(54, 53, 53);
+              }
+            }
+          }
+
+          .sec3 {
+            ul {
+              li {
+                display: flex;
+                flex-flow: row nowrap;
+                color: rgb(85, 8, 85);
+                gap: 0.5rem;
+
+                &.websites {
+                  color: orangered;
+                }
+                &.software {
+                  color: blueviolet;
+                }
+                &.systems {
+                  color: blue;
+                }
+                &.marketing {
+                  color: maroon;
+                }
+
+                p {
+                  color: rgb(23, 23, 51);
+                  border-bottom: 2px solid rgb(57, 195, 241);
+                  padding-bottom: 6px;
+                  margin-top: 4px;
+                  width: 70%;
+
+                  &.basic {
+                    border-bottom: 2px solid rgb(57, 195, 241);
+                  }
+
+                  &.medium {
+                    background-color: rgb(32, 204, 32);
+                  }
+
+                  &.premium {
+                    background-color: rgb(235, 57, 196);
+                  }
+                }
+              }
+            }
+          }
+
+          .sec4 {
+            background-color: rgb(57, 195, 241);
+            margin-top: 8px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+
+            &.basic {
+              background-color: rgb(57, 195, 241);
+            }
+
+            &.medium {
+              background-color: rgb(32, 204, 32);
+            }
+
+            &.premium {
+              background-color: rgb(235, 57, 196);
+            }
+
+            a {
+              padding: 12px 23px 12px 23px;
+              background-color: orange;
+              text-decoration: none;
+              border-radius: 7px;
+              font-size: 16px;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

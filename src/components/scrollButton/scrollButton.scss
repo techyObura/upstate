@@ -1,0 +1,131 @@
+@import "../../global.scss";
+
+.floatingMenu {
+  height: 250px;
+  width: 100px;
+  background-color: transparent;
+  margin-top: 3rem;
+  position: fixed;
+  top: -10px;
+  left: 10px;
+  z-index: 300;
+  border-radius: 15px;
+
+  &.active {
+    background-color: orange;
+  }
+
+  .coat {
+    transition: all 0.5s ease;
+    .hamburger {
+      width: 36px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: visible;
+      cursor: pointer;
+      padding-left: 0.5rem;
+      margin-bottom: 1rem;
+      padding: 0.6rem;
+      background-color: orange;
+      border-radius: 50%;
+
+      .lineA {
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        transform-origin: right;
+        transition: all 0.5s ease;
+
+        &.active {
+          transform: rotate(-38deg);
+        }
+      }
+
+      .lineB {
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        transition: all 0.5s ease;
+
+        &.active {
+          opacity: 0;
+        }
+      }
+
+      .lineC {
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        transform-origin: right;
+        transition: all 0.5s ease;
+
+        &.active {
+          transform: rotate(38deg);
+        }
+      }
+    }
+  }
+  .hamburgerList {
+    list-style-type: none;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+
+    li {
+      margin-bottom: 10px;
+      a {
+        text-decoration: none;
+        font-weight: 700;
+        color: white;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.btn-btn {
+  color: white;
+  background-color: orange;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 90%;
+  bottom: 30px;
+  z-index: 5;
+  cursor: pointer;
+  animation: Blinkering 1s infinite;
+
+  .arrowUp {
+    width: 40px;
+    height: 40px;
+    transform: rotate(180deg);
+    align-self: center;
+    margin: auto;
+    margin-bottom: 7px;
+    margin-left: 5px;
+  }
+
+  @keyframes Blinkering {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(0.95);
+      opacity: 0.6;
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+}

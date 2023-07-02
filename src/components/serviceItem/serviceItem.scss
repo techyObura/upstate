@@ -1,0 +1,26 @@
+@import "../../global.scss";
+.li {
+  font-size: 18px;
+  padding: 7px;
+  background-color: blue;
+  padding-left: 18px;
+  padding-right: 18px;
+  color: white;
+  font-weight: 500;
+  font-family: $nunito;
+  border-radius: 7px;
+  list-style-type: none;
+
+  &.active {
+    background-color: orange;
+    color: blue;
+    transform: scale(0.95);
+  }
+
+  &:hover {
+    background-color: rgb(196, 155, 79);
+    color: rgb(194, 186, 186);
+    transform: scale(0.95);
+    font-weight: 600;
+  }
+}

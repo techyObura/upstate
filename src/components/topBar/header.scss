@@ -1,0 +1,565 @@
+@import "../../global.scss";
+
+.header {
+  background-color: blue;
+  width: 100%;
+  height: 70px;
+  color: $fontWhite;
+  display: flex;
+  align-items: center;
+
+  @include mobile {
+    width: 100vw;
+  }
+
+  .headerContainer {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    position: relative;
+
+    @include mobile {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      &.active {
+        position: relative;
+      }
+    }
+
+    .right {
+      margin-right: 1.5rem;
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+
+      .hamburger {
+        width: 36px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: visible;
+        cursor: pointer;
+        padding-left: 0.5rem;
+
+        &:hover {
+          animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          transform: translate3d(0, 0, 0);
+          backface-visibility: hidden;
+          perspective: 1000px;
+        }
+
+        @keyframes shake {
+          10% {
+            transform: translate3d(-1px 0, 0);
+          }
+
+          90% {
+            transform: translate3d(-1px 0, 0);
+          }
+
+          20% {
+            transform: translate3d(2px 0, 0);
+          }
+
+          80% {
+            transform: translate3d(2px 0, 0);
+          }
+
+          30% {
+            transform: translate3d(-4px 0, 0);
+          }
+
+          50% {
+            transform: translate3d(-4px 0, 0);
+          }
+
+          70% {
+            transform: translate3d(-4px 0, 0);
+          }
+
+          40% {
+            transform: translate3d(4px 0, 0);
+          }
+
+          60% {
+            transform: translate3d(4px 0, 0);
+          }
+        }
+
+        .line1 {
+          width: 100%;
+          height: 3px;
+          background-color: $fontWhite;
+          transform-origin: right;
+          transition: all 2s ease;
+
+          &.active {
+            transform: rotate(-38deg);
+          }
+        }
+
+        .line2 {
+          width: 100%;
+          height: 3px;
+          background-color: $fontWhite;
+          transition: all 2s ease;
+
+          &.active {
+            opacity: 0;
+          }
+        }
+
+        .line3 {
+          width: 100%;
+          height: 3px;
+          background-color: $fontWhite;
+          transform-origin: right;
+          transition: all 2s ease;
+
+          &.active {
+            transform: rotate(38deg);
+          }
+        }
+      }
+    }
+
+    .feature {
+      display: none;
+
+      @include mobile {
+        display: flex;
+        flex-flow: column nowrap;
+        position: absolute;
+        top: 107px;
+        width: 25vw;
+        height: calc(100vh - 70px);
+        left: -30vw;
+        background-color: blue;
+        align-items: center;
+        transition: all 1s ease-in-out;
+        z-index: 9999;
+
+        &.active {
+          left: 0;
+        }
+      }
+
+      .navIcon {
+        display: flex;
+        flex-flow: column nowrap;
+
+        li {
+          list-style-type: none;
+          margin-top: 2rem;
+
+          &:hover {
+            transform: scale(0.95);
+            color: orange;
+          }
+
+          a {
+            text-decoration: none;
+            color: white;
+            font-size: 26px;
+            font-family: $roboto;
+            font-weight: 700;
+
+            &:hover {
+              color: orange;
+            }
+          }
+        }
+      }
+
+      .socialMedia {
+        display: flex;
+        width: 130px;
+        justify-content: space-between;
+        list-style-type: none;
+        margin-top: 10rem;
+
+        li {
+          a {
+            text-decoration: none;
+            color: white;
+          }
+        }
+      }
+
+      .stars {
+        display: flex;
+        width: 100%;
+        height: 30px;
+        margin-top: 3rem;
+        justify-content: space-around;
+
+        li {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          list-style-type: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          animation: animate 1.7s ease-in-out infinite;
+          transition: all 3s;
+        }
+
+        @keyframes animate {
+          0% {
+            transform: scale(0.2);
+          }
+          40% {
+            transform: scale(0.2);
+          }
+          100% {
+            transform: scale(0.2);
+          }
+
+          20% {
+            transform: scale(0.4);
+          }
+        }
+
+        .star-1 {
+          animation-delay: -3.2s;
+          background-color: blue;
+          box-shadow: 0 0 10px blue;
+        }
+
+        .star-2 {
+          animation-delay: -3s;
+          background-color: $fontWhite;
+          box-shadow: 0 0 10px $fontWhite;
+          color: red;
+        }
+
+        .star-3 {
+          animation-delay: -2.8s;
+          background-color: red;
+          box-shadow: 0 0 10px red;
+        }
+
+        .star-4 {
+          animation-delay: -2.6s;
+          background-color: $backBlue;
+          box-shadow: 0 0 10px $backBlue;
+        }
+
+        .star-5 {
+          animation-delay: -2.4s;
+          background-color: $fontWhite;
+          box-shadow: 0 0 20px $fontWhite;
+          color: red;
+        }
+      }
+    }
+  }
+
+  .features {
+    display: flex;
+    justify-content: center;
+    width: 380px;
+    position: relative;
+    height: 60px;
+
+    @include mobile {
+      display: none;
+    }
+
+    .navIcons {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 6px;
+      margin-left: 1rem;
+
+      li {
+        text-decoration: none;
+        list-style-type: none;
+        transition: all 300ms linear;
+        cursor: pointer;
+        white-space: nowrap;
+
+        &.active1 {
+          background-color: orange;
+          color: blue;
+          padding: 5px;
+          border-radius: 3px;
+        }
+
+        &:hover {
+          background-color: orange;
+          padding: 5px;
+          color: rgb(241, 228, 228);
+          border-radius: 3px;
+        }
+
+        &:last-of-type {
+          border: none;
+        }
+
+        a {
+          text-decoration: none;
+          font-family: $nunito;
+          font-size: 16px;
+          color: rgb(241, 228, 228);
+          padding: 7px;
+          transition: all 300ms linear;
+          border-radius: 3px;
+          border-right: 1px solid orange;
+
+          &.active1 {
+            color: blue;
+            font-size: 16px;
+            font-weight: 400;
+            border-radius: 7px;
+          }
+
+          &:hover {
+            color: blue;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 7px;
+            border-radius: 7px;
+          }
+        }
+      }
+    }
+
+    .star {
+      position: absolute;
+      display: flex;
+      top: -8px;
+      left: 10px;
+      width: 380px;
+      height: 30px;
+      justify-content: space-around;
+
+      li {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: animate 1.7s ease-in-out infinite;
+        transition: all 3s;
+      }
+
+      @keyframes animate {
+        0% {
+          transform: scale(0.1);
+        }
+        40% {
+          transform: scale(0.1);
+        }
+        100% {
+          transform: scale(0.1);
+        }
+
+        20% {
+          transform: scale(0.6);
+        }
+      }
+
+      .star1 {
+        animation-delay: -3.2s;
+        background-color: orange;
+        box-shadow: 0 0 20px orange;
+      }
+
+      .star2 {
+        animation-delay: -3s;
+        background-color: $fontWhite;
+        box-shadow: 0 0 20px $fontWhite;
+        color: red;
+      }
+
+      .star3 {
+        animation-delay: -2.8s;
+        background-color: red;
+        box-shadow: 0 0 20px red;
+      }
+
+      .star4 {
+        animation-delay: -2.6s;
+        background-color: $backBlue;
+        box-shadow: 0 0 20px $backBlue;
+      }
+
+      .star5 {
+        animation-delay: -2.4s;
+        background-color: $fontWhite;
+        box-shadow: 0 0 20px $fontWhite;
+        color: red;
+      }
+    }
+  }
+
+  .headerTitle {
+    color: inherit;
+    font-size: 30px;
+    line-height: 144px;
+    font-family: $roboto;
+    font-weight: 900;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: 13vw;
+
+    @include mobile {
+      margin: 0px;
+      font-size: 24px;
+    }
+
+    .logo {
+      width: 20px;
+      height: 47px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      cursor: pointer;
+
+      @include mobile {
+        height: 35px;
+      }
+
+      span {
+        width: 3px;
+        height: 100%;
+        background-color: $fontWhite;
+      }
+
+      .log1 {
+        background-color: orange;
+        margin-right: 2px;
+        transform: rotate(10deg);
+      }
+
+      .log2 {
+        height: 40px;
+        background-color: $backBlue;
+
+        @include mobile {
+          height: 30px;
+        }
+      }
+
+      .log3 {
+        background-color: darkred;
+      }
+    }
+    .titleName {
+      color: white;
+      font-family: $roboto;
+      cursor: pointer;
+
+      .crevName {
+        font-family: $nunito;
+      }
+    }
+  }
+
+  .newsletter {
+    margin-left: 26vw;
+    white-space: nowrap;
+
+    @include mobile {
+      margin: 0px;
+    }
+
+    .contContainer {
+      width: 130px;
+      height: 50px;
+      background-color: orange;
+      margin-right: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      cursor: pointer;
+      animation: wobble 5s ease infinite;
+
+      @include mobile {
+        width: 90px;
+        margin-right: 1.5rem;
+        height: 40px;
+      }
+
+      @keyframes wobble {
+        0% {
+          -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+          -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+          animation-duration: 3s;
+        }
+
+        100% {
+          -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+          -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+          animation-duration: 3s;
+        }
+
+        15% {
+          -webkit-transform: translate(-32px) rotate(-10deg);
+          transform: translate(-32px) rotate(-10deg);
+          animation-duration: 3s;
+          transform: scale(0.9);
+        }
+
+        30% {
+          -webkit-transform: translate(calc(32px / 2)) rotate(10deg);
+          transform: translate(calc(32px / 2)) rotate(10deg);
+          animation-duration: 3s;
+        }
+
+        45% {
+          -webkit-transform: translate(calc(-32px / 2))
+            rotate(calc(-10deg / 1.8));
+          transform: translate(calc(-32px / 2)) rotate(calc(-10deg / 1.8));
+          transform: scale(0.9);
+        }
+
+        60% {
+          -webkit-transform: translate(calc(32px / 3.3)) rotate(calc(10deg / 3));
+          transform: translate(calc(32px / 3.3)) rotate(calc(10deg / 3));
+        }
+
+        75% {
+          -webkit-transform: translate(calc(-32px / 5.5))
+            rotate(calc(-10deg / 5));
+          transform: translate(calc(-32px / 5.5)) rotate(calc(-10deg / 5));
+          transform: scale(0.9);
+        }
+      }
+
+      h3 {
+        a {
+          color: $fontWhite;
+          text-decoration: none;
+          font-size: 1.4rem;
+          font-weight: 400;
+
+          @include mobile {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

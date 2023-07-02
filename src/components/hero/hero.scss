@@ -1,0 +1,235 @@
+@import "../../global.scss";
+
+.hero {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  @include mobile {
+    align-items: flex-start;
+    position: relative;
+    background-color: white;
+  }
+
+  .externalContainer {
+    display: flex;
+    background-color: white;
+    overflow: hidden;
+    height: calc(100vh - 70px);
+
+    @include mobile {
+      flex-direction: column;
+      background-color: white;
+    }
+
+    .conta {
+      display: none;
+
+      @include mobile {
+        display: block;
+        margin: 20px auto;
+        width: 90%;
+        height: 20px;
+
+        h2 {
+          font-size: 14px;
+          color: gray;
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    .leftContainer {
+      flex: 1;
+      overflow: hidden;
+
+      @include mobile {
+        height: 50%;
+        width: 100%;
+        overflow: hidden;
+        margin: 0;
+      }
+
+      .imgContainer {
+        width: 800px;
+        height: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: orange;
+        border-radius: 50%;
+        float: right;
+        overflow: hidden;
+
+        @include mobile {
+          align-items: center;
+          height: 400px;
+          width: 100%;
+          border-radius: 0;
+          background-color: white;
+        }
+
+        img {
+          height: 99%;
+          border-top-left-radius: 10rem;
+          border-top-right-radius: 10rem;
+          border-bottom-left-radius: 10rem;
+          border-bottom-right-radius: 30rem;
+
+          @include mobile {
+            height: 100%;
+            display: flex;
+            border-top-left-radius: 5rem;
+            border-top-right-radius: 7rem;
+            border-bottom-left-radius: 40%;
+            border-bottom-right-radius: 60%;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+
+    .rightContainer {
+      flex: 1;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+
+      @include mobile {
+        height: 50vh;
+        width: 100%;
+      }
+
+      .rightWrapper {
+        width: 90%;
+        height: 30px;
+        padding: 50px 0px 50px 0px;
+        margin-top: 1rem;
+
+        @include mobile {
+          padding-left: 0;
+          align-items: center;
+          padding: 0;
+          margin: auto;
+          margin-top: 6rem;
+          height: auto;
+        }
+
+        h4 {
+          line-height: 20px;
+
+          @include mobile {
+            display: none;
+          }
+        }
+
+        h3 {
+          color: orange;
+        }
+        h2 {
+          color: black;
+          line-height: 50px;
+          font-size: 23px;
+
+          @include mobile {
+            line-height: 30px;
+            font-size: 18px;
+            text-align: center;
+          }
+
+          .skills {
+            color: red;
+          }
+        }
+      }
+
+      .cont {
+        width: 90%;
+        height: 70px;
+        padding-right: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5rem;
+        flex-flow: column nowrap;
+
+        @include mobile {
+          padding: 0;
+          margin: 0;
+          padding: 0;
+          display: none;
+        }
+
+        h2 {
+          text-align: center;
+          line-height: 50px;
+          color: grey;
+          font-size: 17px;
+          text-transform: capitalize;
+
+          @include mobile {
+            line-height: 20px;
+          }
+        }
+      }
+
+      .arrowContact {
+        color: red;
+        margin-left: 40px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        rotate: -90deg;
+        position: absolute;
+        left: 45%;
+        bottom: 10px;
+
+        @include mobile {
+          left: 38%;
+          position: absolute;
+          bottom: 10px;
+        }
+
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: BLUE;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+
+          .arrow-down {
+            width: 100%;
+            height: 100%;
+
+            animation: blink 1s ease-in-out infinite;
+          }
+
+          @keyframes blink {
+            100% {
+              transform: scale(0.9);
+            }
+
+            50% {
+              opacity: 0.5;
+              transform: scale(0.8);
+            }
+
+            0% {
+              transform: scale(0.9);
+            }
+          }
+        }
+      }
+    }
+  }
+}

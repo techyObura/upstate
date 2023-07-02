@@ -1,0 +1,30 @@
+$backWhite: white;
+$backBlue: #15023a;
+$title: darkred;
+$lightgrey: rgb(156, 155, 155);
+$nunito: "Nunito Sans", sans-serif;
+$roboto: "Roboto Sans", sans-serif;
+$poppins: "Poppins", sans-serif;
+$advert: lightblue;
+$fontWhite: white;
+
+.color {
+  color: white;
+  color: #1237b3;
+  color: #b98625;
+  color: #b3692b;
+  color: #eb9d3b;
+  color: darkred;
+
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+$width: 900;
+
+@mixin mobile {
+  @media (max-width: #{$width}px) {
+    @content;
+  }
+}
